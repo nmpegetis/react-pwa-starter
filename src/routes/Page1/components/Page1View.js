@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Select } from '../../../widgets';
+import { Button, Select, DatePicker } from '../../../widgets';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
@@ -43,6 +43,8 @@ class Page1View extends React.Component {
 				onChange={this.handleChange}
 				value={this.state['select2']}
 			/>,
+			<DatePicker label="Issue Date" initialDate={new Date()} />,
+			<DatePicker label="Expire Date" initialDate={new Date('2020-01-01T00:00:00.000Z')} />,
 		];
 
 		return [
