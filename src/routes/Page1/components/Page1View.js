@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Button, DatePicker, Select, Tabs } from '../../../widgets';
+import { Button, DatePicker, IconButton, Select, Tabs } from '../../../widgets';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import Icon from '@material-ui/icons/Edit';
 
 class Page1View extends React.Component {
 	constructor(props) {
@@ -45,6 +46,7 @@ class Page1View extends React.Component {
 			/>,
 			<DatePicker label="Issue Date" initialDate={new Date()} />,
 			<DatePicker label="Expire Date" initialDate={new Date('2020-01-01T00:00:00.000Z')} />,
+			<IconButton icon={<Icon>edit_icon</Icon>} label="Edit" title="EDIT" />,
 		];
 
 		return [

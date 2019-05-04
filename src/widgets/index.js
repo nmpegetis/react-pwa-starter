@@ -1,6 +1,7 @@
 import Button from './Button/ButtonContainer';
-import Select from './Select/SelectContainer';
 import DatePicker from './DatePicker/DatePickerContainer';
+import IconButton from './IconButton/IconButtonContainer';
+import Select from './Select/SelectContainer';
 import Tabs from './Tabs/TabsContainer';
 
-export { Button, DatePicker, Select, Tabs };
+export { Button, DatePicker, IconButton, Select, Tabs };

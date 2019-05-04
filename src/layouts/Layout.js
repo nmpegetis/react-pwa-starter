@@ -16,7 +16,7 @@ const routeComponentsMap = {
 
 class Layout extends React.Component {
 	state = {
-		open: true,
+		open: false,
 		activeEntry: '',
 	};
 
