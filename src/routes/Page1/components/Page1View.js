@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Select, DatePicker } from '../../../widgets';
+import { Button, DatePicker, Select, Tabs } from '../../../widgets';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
@@ -48,6 +48,7 @@ class Page1View extends React.Component {
 		];
 
 		return [
+			<Tabs tabContents={[ 'Item One', 'Item Two' ]} tabLabels={[ 'Item One', 'Item Two' ]} initialValue={0} />,
 			<Grid container spacing={24}>
 				{page1Components.map((component) => (
 					<Grid item xs={12} sm={4} md={3}>

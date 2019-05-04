@@ -6,7 +6,6 @@ import styles from './styles';
 import 'date-fns';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
-// import { MuiPickersUtilsProvider, TimePicker, DatePicker } from 'material-ui-pickers';
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
 
 function AppDatePicker({ classes, label, initialDate, pickerType = 'date' }) {
