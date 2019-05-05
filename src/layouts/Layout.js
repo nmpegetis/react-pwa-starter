@@ -8,7 +8,7 @@ import styles from './styles';
 import Header from './Header';
 import Drawer from './Drawer';
 import Page1 from '../routes/Page1';
-import { mainMenuEntries } from './menu';
+import { mainMenuEntries, userMenuEntries } from './menu';
 
 const routeComponentsMap = {
 	Page1,
@@ -33,8 +33,12 @@ class Layout extends React.Component {
 	};
 
 	renderRoutes = () =>
-		Object.keys(mainMenuEntries).map((entry) => (
-			<Route exact path={mainMenuEntries[entry].link} component={routeComponentsMap[entry]} />
+		Object.keys({ ...mainMenuEntries, ...userMenuEntries }).map((entry) => (
+			<Route
+				exact
+				path={{ ...mainMenuEntries, ...userMenuEntries }[entry].link}
+				component={routeComponentsMap[entry]}
+			/>
 		));
 
 	render() {

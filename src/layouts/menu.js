@@ -20,16 +20,32 @@ export const mainMenuEntries = {
 	Page4: { link: '/', renderIcon: () => <ShutterSpeedIcon /> },
 	Page5: { link: '/', renderIcon: () => <LibraryBooksIcon /> },
 	Page6: { link: '/', renderIcon: () => <ShutterSpeedIcon /> },
+};
+
+export const userMenuEntries = {
 	Page7: { link: '/', renderIcon: () => <PersonIcon /> },
 	Page8: { link: '/', renderIcon: () => <SettingsIcon /> },
 	Page9: { link: '/', renderIcon: () => <NotificationsActiveIcon /> },
 };
 
-export const mainListItems = Object.keys(mainMenuEntries).map((entry) => (
-	<Link to={mainMenuEntries[entry].link} style={{ textDecoration: 'none' }}>
-		<ListItem button>
-			<ListItemIcon>{mainMenuEntries[entry].renderIcon()}</ListItemIcon>
-			<ListItemText primary={entry} />
-		</ListItem>
-	</Link>
-));
+export const mainListItems = [
+	Object.keys(mainMenuEntries).map((entry) => (
+		<Link to={mainMenuEntries[entry].link} style={{ textDecoration: 'none' }}>
+			<ListItem button>
+				<ListItemIcon>{mainMenuEntries[entry].renderIcon()}</ListItemIcon>
+				<ListItemText primary={entry} />
+			</ListItem>
+		</Link>
+	)),
+];
+
+export const userListItems = [
+	Object.keys(userMenuEntries).map((entry) => (
+		<Link to={userMenuEntries[entry].link} style={{ textDecoration: 'none' }}>
+			<ListItem button>
+				<ListItemIcon>{userMenuEntries[entry].renderIcon()}</ListItemIcon>
+				<ListItemText primary={entry} />
+			</ListItem>
+		</Link>
+	)),
+];

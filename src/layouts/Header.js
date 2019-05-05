@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainMenuEntries } from './menu';
+import { mainMenuEntries, userMenuEntries } from './menu';
 import styles from './styles';
 
 /**
@@ -31,13 +31,16 @@ const Header = withStyles(styles)(({ classes, open, onDrawerOpen, history }) => 
 			</IconButton>
 			<Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
 				{history.location.pathname.split('/').length === 2 ? (
-					Object.keys(mainMenuEntries).filter(
-						(entry) => mainMenuEntries[entry].link === history.location.pathname
-					)[0]
+					Object.keys({ ...mainMenuEntries, ...userMenuEntries }).filter(
+						(entry) =>
+							(({ ...mainMenuEntries, ...userMenuEntries }[entry].link === history.location.pathname)[0])
+					)
 				) : (
-					Object.keys(mainMenuEntries).filter(
-						(entry) => mainMenuEntries[entry].link === '/' + history.location.pathname.split('/')[1]
-					)[0]
+					Object.keys({ ...mainMenuEntries, ...userMenuEntries }).filter(
+						(entry) =>
+							(({ ...mainMenuEntries, ...userMenuEntries }[entry].link ===
+								'/' + history.location.pathname.split('/')[1])[0])
+					)
 				)}
 			</Typography>
 			<IconButton color="inherit">

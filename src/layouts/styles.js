@@ -69,6 +69,7 @@ const styles = (theme) => ({
 	h5: {
 		marginBottom: theme.spacing.unit * 2,
 	},
+	userMenuItems: { position: 'absolute', bottom: 0 },
 });
 
 export default styles;
